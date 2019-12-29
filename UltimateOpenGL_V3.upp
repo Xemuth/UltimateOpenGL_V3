@@ -1,11 +1,8 @@
 description "\377B28,0,200";
 
-uses
-	plugin/glm;
+library(MSC) assimp-vc141-mt.lib;
 
-library
-	zlibstatic,
-	assimp;
+library(GCC) libassimp.dll.a;
 
 file
 	README.md,

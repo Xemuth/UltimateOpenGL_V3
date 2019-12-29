@@ -159,7 +159,7 @@ bool UltimateOpenGL_Context::SetActiveScene(const Upp::String& name){
 }
 bool UltimateOpenGL_Context::RemoveScene(const Upp::String& nameOfScene){
 	if(AllScenes.Find(nameOfScene) !=-1){
-		if(ActiveScene == &AllScenes.Get(nameOfScene)) ActiveScene==nullptr;
+		if(ActiveScene == &AllScenes.Get(nameOfScene)) ActiveScene = nullptr;
 		AllScenes.Remove(AllScenes.Find(nameOfScene));
 		return true;
 	}
@@ -199,7 +199,7 @@ Upp::VectorMap<Upp::String,Texture>& UltimateOpenGL_Context::GetTextures(){
 void UltimateOpenGL_Context::Draw(){
 	try{
 		//HEre I must do DeltaTime Calculation
-		float currentFrame = GetTime(); //Calcules le nombre de frames par seconde
+		double currentFrame = GetTime(); //Calcules le nombre de frames par seconde
 		DeltaTime = currentFrame - lastFrame;//Calcules le nombre de frames par seconde
 		lastFrame = currentFrame;//Calcules le nombre de frames par seconde
 		

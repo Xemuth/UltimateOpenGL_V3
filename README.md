@@ -1,11 +1,11 @@
 # UltimateOpenGL 
 
-UltimateOpenGL is a 3D motor used to make 3D games made by a beginner. It's designed to be "code only". it mean you don't have (at this time) any GUI  to help you create scene with your mouse.
-Futher more, it need Ultimate++ Framework (A powerful C++ Framework) and the ide used by it : [TheIDE](https://www.ultimatepp.org/index.html)
+UltimateOpenGL is a 3D motor used to make 3D games made by a beginner. It's designed to be "code only". It means you don't have (at this time) any GUI to help you create scene with your mouse.
+Furthermore, it needs Ultimate++ Framework (A powerful C++ Framework) and the IDE used by it : [TheIDE](https://www.ultimatepp.org/index.html)
 
-here is the Ultimate++ post : https://www.ultimatepp.org/forums/index.php?t=msg&goto=52755&#msg_52755
+Here it is the Ultimate++ post : https://www.ultimatepp.org/forums/index.php?t=msg&goto=52755&#msg_52755
 
-At this time, UOGL allow Scene creation, insertion of  multiple 'GameObject'(Shapes, Lights), insertion of multiple camera per scene. 
+At this time, UOGL allow Scene creation, insertion of multiple 'GameObject'(Shapes, Lights), insertion of multiple camera per scene. 
 
 Things are coming : 
 	Support of animation and FBX file
@@ -16,7 +16,7 @@ Things are coming :
 
 First be sure to have Ultimate++ Framework and TheIDE.
  
-You also need some extern librairies : 
+You also need some extern libraries : 
 GLM (OpenGL Mathematique) https://glm.g-truc.net/0.9.9/index.html
 
 Glad (Multi-Language GL/GLES/EGL/GLX/WGL Loader-Generator based on the official specs) used to properly load OpenGL

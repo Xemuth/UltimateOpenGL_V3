@@ -85,7 +85,7 @@ bool Scene::SetActiveCamera(const Upp::String& name){
 }
 bool Scene::RemoveCamera(const Upp::String& name){
 	if(AllCameras.Find(name) !=-1){
-		if(ActiveCamera == &AllCameras.Get(name)) ActiveCamera==nullptr;
+		if(ActiveCamera == &AllCameras.Get(name)) ActiveCamera = nullptr;
 		AllCameras.Remove(AllCameras.Find(name));
 		return true;
 	}

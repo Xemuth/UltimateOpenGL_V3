@@ -31,7 +31,7 @@ struct MaterialTexture: public Material,Upp::Moveable<MaterialTexture> {
 	MaterialTexture& SetShininess(float _shininess){shininess = _shininess; return *this;}
 	MaterialTexture& UseNormal(bool _useNormal){useNormal = (_useNormal)?1:-1; return *this;}
 	MaterialTexture& SetNormal(int _Normal){if(useNormal== -1)useNormal =1; normal = _Normal; return *this;}
-	int diffuse = 0.64f;//You can prevent this automatique value change
+	int diffuse = 0.64f;//You can prevent this automatique value change // Iñaki: Is this the intent?
 	
 	int useSpecular=-1; //If this one is set to One then we use Shininess, UltimateOpenGL will set it to one before sending material to the shader if Specular is different of -1
 	int specular = -1; // Id of speculare used for normal Mapping

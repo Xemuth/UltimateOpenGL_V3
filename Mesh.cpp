@@ -16,9 +16,11 @@ Mesh::Mesh(const Upp::Vector<Vertex>& vertices, Upp::Vector<unsigned int>& indic
 		if(t.GetType() == DIFFUSE && lastDiffuse.IsLoaded()){
 			MaterialTexture& m =  materialsTexture.Add(lastDiffuse.GetName());
 			m.SetDiffuse(lastDiffuse.GetTextureIterator());
-			if(lastSpecular.IsLoaded());
+			if(lastSpecular.IsLoaded())
+				; // Iñaki: Is this the intent?
 			m.SetSpecular(lastSpecular.GetId());
-			if(lastNormal.IsLoaded());
+			if(lastNormal.IsLoaded())
+				; // Iñaki: Is this the intent?
 			m.SetNormal(lastNormal.GetId());
 			
 			lastNormal =Texture();
@@ -41,9 +43,11 @@ Mesh::Mesh(const Upp::Vector<Vertex>& vertices, Upp::Vector<unsigned int>& indic
 	if(lastDiffuse.IsLoaded()){
 		MaterialTexture& m =  materialsTexture.Add(lastDiffuse.GetName());
 		m.SetDiffuse(lastDiffuse.GetTextureIterator());
-		if(lastSpecular.IsLoaded());
+		if(lastSpecular.IsLoaded())
+			;	// Iñaki: Was this the intent?
 		m.SetSpecular(lastSpecular.GetId());
-		if(lastNormal.IsLoaded());
+		if(lastNormal.IsLoaded())
+			;	// Iñaki: Was this the intent?
 		m.SetNormal(lastNormal.GetId());
 	}
 
@@ -477,7 +481,7 @@ void Mesh::GenerateAutoShader(int NbLightDir,int NbLightPoint,int NbLightSpot){
 	Upp::String AllPointLights="";
 	Upp::String AllSpotLights="";	
 	if(materialsTexture.GetCount()== 0 && materialsColor.GetCount() == 0){
-		float r =Upp::Randomf() ;float g =Upp::Randomf() ;float b =Upp::Randomf() ;
+		float r = float(Upp::Randomf());	float g = float(Upp::Randomf());	float b = float(Upp::Randomf());
 		MaterialColor& m = CreateMaterialColor("defaultColor");
 		m.SetDiffuse(glm::vec3( r,g,b));
 		LOG("Class Mesh:(INFO) void Mesh::GenerateAutoShader(int,int,int) -> static color set for " + object3D->GetName() + " object !");	

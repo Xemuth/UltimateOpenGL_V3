@@ -70,11 +70,11 @@ void Object3D::Draw(glm::mat4 model,glm::mat4 view,glm::mat4 projection,glm::mat
 	if(onDraw != nullptr){
 		onDraw(*this);	
 	}
-	for(unsigned int i = 0; i < meshes.size(); i++)
+	for(int i = 0; i < meshes.size(); i++)
         meshes[i].Draw(model,view,projection,transform,camera);
 }
 void Object3D::Load(){
-	for(unsigned int i = 0; i < meshes.size(); i++)
+	for(int i = 0; i < meshes.size(); i++)
         meshes[i].Load();
 }
 
@@ -195,14 +195,14 @@ void Object3D::ProcessMesh(aiMesh *mesh, const aiScene *scene){
         Vertex vertex;
         glm::vec3 vector; // we declare a placeholder vector since assimp uses its own vector class that doesn't directly convert to glm's vec3 class so we transfer the data to this placeholder glm::vec3 first.
         // positions
-        vector.x = mesh->mVertices[i].x;
-        vector.y = mesh->mVertices[i].y;
-        vector.z = mesh->mVertices[i].z;
+        vector.x = float(mesh->mVertices[i].x);
+        vector.y = float(mesh->mVertices[i].y);
+        vector.z = float(mesh->mVertices[i].z);
         vertex.Position = vector;
         // normals
-       vector.x = mesh->mNormals[i].x;
-        vector.y = mesh->mNormals[i].y;
-        vector.z = mesh->mNormals[i].z;
+      	vector.x = float(mesh->mNormals[i].x);
+        vector.y = float(mesh->mNormals[i].y);
+        vector.z = float(mesh->mNormals[i].z);
         vertex.Normal = vector;
         // texture coordinates
         if(mesh->mTextureCoords[0]) // does the mesh contain texture coordinates?
@@ -210,8 +210,8 @@ void Object3D::ProcessMesh(aiMesh *mesh, const aiScene *scene){
             glm::vec2 vec;
             // a vertex can contain up to 8 different texture coordinates. We thus make the assumption that we won't 
             // use models where a vertex can have multiple texture coordinates so we always take the first set (0).
-            vec.x = mesh->mTextureCoords[0][i].x; 
-            vec.y = mesh->mTextureCoords[0][i].y;
+            vec.x = float(mesh->mTextureCoords[0][i].x); 
+            vec.y = float(mesh->mTextureCoords[0][i].y);
             vertex.TexCoords = vec;
         }
         else

@@ -9,7 +9,7 @@ SHADER(330 core,
 
 	/*
 		This Shader is used to Generate automatique Shader using UltimateOpenGL.
-		\n is not elegante but necessary because Annotation(@) will be at reading transform to
+		\n It is not elegant but necessary because Annotation(@) will be at reading transform to
 		Commentaire bracket(//) Allowing the compilation of annotation not used by GLSL
 		compiler.
 	*/
